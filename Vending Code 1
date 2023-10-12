@@ -1,0 +1,153 @@
+#include <stdio.h>
+
+int password = 123123;
+const int MIN = 5;
+int stockA = 10;
+int stockB = 10;
+int stockC = 10;
+float priceA = 3.50;
+float priceB = 1.25;
+float priceC = 2.75;
+
+
+int main()
+{
+    // Choice variable
+    
+    int choice = -1;
+    
+    // Menu display
+    printf("VENDING MACHINE\n");
+    printf("MENU:\n1. Purchase an Item\n2. Admin Mode\n3. Exit");
+    
+    // Infinite Loop for choice input
+    while(1){
+        printf("\nEnter your choice:");
+        scanf("%d", &choice);
+        
+        // If-else ladder
+        
+        
+        
+        if(choice == 1)
+        {
+            printf("PURCHASE AN ITEM\n");
+            printf("1. Product A\n2. Product B\n3. Product C");
+            while(1){
+                printf("\nEnter your choice:");
+                scanf("%d", &choice);
+        
+                // If-else ladder
+                if(choice == 1){
+                    printf("PRODUCT A\n");
+                    printf("Price: %f \n",priceA);
+                    if(stockA !=0){
+                        printf("1.Confirm Purchase\n2.Cancel Order\n");
+                        printf("Enter your Choice: ");
+                        scanf("%d", &choice);
+                        
+                    }
+                        if (choice == 1){
+                            float price;
+                            float total = 0.0;
+                            float coin;
+                             // Prompt the user for the price of the item
+                             // Prompt the user for the price of the item
+                            printf("Enter the price of the item: ");
+                            scanf("%f", &price);
+                            if(price=priceA){
+                                while (total < price) {
+                                    // Prompt the user for a coin
+                                    printf("Insert a coin (1-dirham, 0.5-dirham, or 0.25-dirham): ");
+                                    scanf("%f", &coin);
+
+                                    // Check if the coin is valid
+                                    if (coin == 1.0 || coin == 0.5 || coin == 0.25) {
+                                        total += coin;
+                                        printf("Current total: %.2f dirhams\n", total);
+                                    } else {
+                                        char choice;
+                                        printf("Invalid coin. Do you want to cancel the purchase? (y/n): ");
+                                        scanf(" %c", &choice);  // Space before %c to consume the newline character
+                                        if (choice == 'y' || choice == 'Y') {
+                                            printf("Purchase canceled.\n");
+                                            return 0;
+                                        }
+                                    }
+                                }
+
+                                printf("Purchase successful! You paid %.2f dirhams for the item.\n", total);
+                                float balance = total-price;
+                                printf("Your Balance Amount is %f",balance);
+                            }   
+                            else{
+                                printf("The amount entered does not match");
+                            }
+
+                                    return 0;
+                                }
+                                }}}}
+                        else if(choice == 2){
+                            printf("Order has been cancelled\n");
+                            break;}
+                        else{
+                            printf("Invalid Input\n");
+                        }
+        else if(choice == 2){
+                    printf("PRODUCT B\n");
+                    printf("Price: %f \n",priceB);
+                    if(stockB !=0){
+                        printf("1.Confirm Purchase\n2.Cancel Order\n");
+                        printf("Enter your Choice: ");
+                        scanf("%d", &choice);
+                        
+                    }
+                        if (choice == 1){
+                            float price;
+                            float total = 0.0;
+                            float coin;
+                             // Prompt the user for the price of the item
+                             // Prompt the user for the price of the item
+                            printf("Enter the price of the item: ");
+                            scanf("%f", &price);
+                            if(price=priceB){
+                                while (total < price) {
+                                    // Prompt the user for a coin
+                                    printf("Insert a coin (1-dirham, 0.5-dirham, or 0.25-dirham): ");
+                                    scanf("%f", &coin);
+
+                                    // Check if the coin is valid
+                                    if (coin == 1.0 || coin == 0.5 || coin == 0.25) {
+                                        total += coin;
+                                        printf("Current total: %.2f dirhams\n", total);
+                                    } else {
+                                        char choice;
+                                        printf("Invalid coin. Do you want to cancel the purchase? (y/n): ");
+                                        scanf(" %c", &choice);  // Space before %c to consume the newline character
+                                        if (choice == 'y' || choice == 'Y') {
+                                            printf("Purchase canceled.\n");
+                                            return 0;
+                                        }
+                                    }
+                                }
+
+                                printf("Purchase successful! You paid %.2f dirhams for the item.\n", total);
+                                float balance = total-price;
+                                printf("Your Balance Amount is %f",balance);
+                            }   
+                            else{
+                                printf("The amount entered does not match");
+                            }
+
+                                    return 0;
+                                }
+                        else if(choice == 2){
+                            printf("Order has been cancelled\n");
+                            break;
+                            }
+                            
+                        else{
+                            printf("Invalid Input\n");
+                        }
+
+}}
